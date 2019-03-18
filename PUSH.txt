@@ -1,0 +1,52 @@
+git push origin master 
+
+Use git clean –f < filename >for file that you want to ignore.
+
+Make sure you use “git fetch” , “git pull” to keep your repo upto date before you begin your work for the day. Otherwise we might end up with your local  repo out of sync with remote.
+
+
+Right order to take update:
+
+?	git stash     --will temporary save your local changes
+?	git pull         -- will take update without conflict with your local changes
+?	git stash show    --list of your local changes
+?	git stash apply     --will show your changes in unstaged state , you can add to stage if you want to commit your changes
+
+è	git status
+è	git add .
+è	git status
+è	git commit -m "cmment"
+è	git push origin master 
+
+git reset --hard HEAD@{1}  -- reset the file to previous version
+
+To restore the previous version of a file :
+git checkout 'master@{2 days ago}' -- path to the file
+Example :
+git checkout 'master@{1 day ago}' -- /C/dxcGit/Internal-Reporting/Internal_Reports_Templates/Development/Data_Mapping_GL4/ID167b_006
+
+git clean –i /C/dxcGit/Internal-Reporting/Internal_Reports_Templates/Development/Data_Mapping_GL4/ID183_010b/ID183_010bsub.jrxml
+
+
+git reset --hard HEAD  -- Revert all the changes
+
+
+
+2872
+down vote
+accepted
+If you want to revert changes made to your working copy, do this:
+
+git checkout .
+If you want to revert changes made to the index (i.e., that you have added), do this. Warning this will reset all of your unpushed commits to master!:
+
+git reset
+If you want to revert a change that you have committed, do this:
+
+git revert <commit 1> <commit 2>
+If you want to remove untracked files (e.g., new files, generated files):
+
+git clean -f
+Or untracked directories (e.g., new or automatically generated directories):
+
+git clean -fd
