@@ -32,9 +32,9 @@ git reset --hard HEAD  -- Revert all the changes
 
 
 
-2872
-down vote
-accepted
+I am learning GIT now
+
+
 If you want to revert changes made to your working copy, do this:
 
 git checkout .
